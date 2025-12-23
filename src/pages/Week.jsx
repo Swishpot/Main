@@ -240,7 +240,7 @@ function WeekContent() {
 
                 {/* Markets */}
                 <div className="markets-section">
-                  {selectedGame.markets.map((market) => (
+                  {(selectedGame.markets || []).map((market) => (
                     <div key={market.type} className="market">
                       <h4>
                         {market.type === "h2h"

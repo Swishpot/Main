@@ -5,5 +5,5 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   // For GitHub Pages deployment - update 'swishpot-web' to your repo name
-  base: '/swishpot-web/',
+  base: '/Main/',
 })

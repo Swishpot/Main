@@ -13,9 +13,9 @@ export default function GameCard({ game, onClick, isSelected }) {
     });
   };
 
-  const h2hMarket = game.markets.find((m) => m.type === "h2h");
-  const awayOdds = h2hMarket?.outcomes.find((o) => o.name === game.awayTeam)?.odds;
-  const homeOdds = h2hMarket?.outcomes.find((o) => o.name === game.homeTeam)?.odds;
+  const h2hMarket = game.markets?.find((m) => m.type === "h2h");
+  const awayOdds = h2hMarket?.outcomes?.find((o) => o.name === game.awayTeam)?.odds;
+  const homeOdds = h2hMarket?.outcomes?.find((o) => o.name === game.homeTeam)?.odds;
 
   return (
     <div

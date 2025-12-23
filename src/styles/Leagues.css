@@ -1,0 +1,121 @@
+/* Leagues Page Styles */
+
+.leagues-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.leagues-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.leagues-header h1 {
+  font-size: 1.5rem;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.user-info span {
+  color: var(--text-secondary);
+}
+
+.btn-logout {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  padding: 8px 16px;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.875rem;
+}
+
+.btn-logout:hover {
+  color: var(--accent-danger);
+}
+
+.leagues-content {
+  flex: 1;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.leagues-actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.leagues-actions button {
+  flex: 1;
+}
+
+.no-leagues {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-secondary);
+}
+
+.no-leagues p {
+  margin-bottom: 8px;
+}
+
+.leagues-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.league-card {
+  background: var(--bg-card);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+
+.league-card:hover {
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.league-info h3 {
+  margin-bottom: 4px;
+}
+
+.league-type {
+  font-size: 0.875rem;
+  color: var(--accent-primary);
+  margin-bottom: 4px;
+}
+
+.league-members {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.league-code {
+  background: var(--bg-tertiary);
+  padding: 8px 16px;
+  border-radius: var(--border-radius-sm);
+  font-family: monospace;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}

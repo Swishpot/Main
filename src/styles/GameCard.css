@@ -1,0 +1,102 @@
+/* Game Card Styles */
+
+.game-card {
+  background: var(--bg-card);
+  border-radius: var(--border-radius);
+  padding: 16px 20px;
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.game-card:hover:not(.locked) {
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.game-card.selected {
+  border-color: var(--accent-primary);
+  background: rgba(88, 166, 255, 0.1);
+}
+
+.game-card.locked {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.locked-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--accent-danger);
+  color: white;
+  font-size: 0.625rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.game-time {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.game-matchup {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.team {
+  flex: 1;
+  text-align: center;
+}
+
+.team.away {
+  text-align: left;
+}
+
+.team.home {
+  text-align: right;
+}
+
+.team-abbr {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.team-name {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.team-odds {
+  display: inline-block;
+  background: var(--bg-tertiary);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+}
+
+.vs {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.game-action {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}

@@ -47,16 +47,23 @@ export const getCachedOdds = async () => {
       "current_odds"
     );
 
-    const lastUpdated = new Date(doc.lastUpdated);
-    const hoursSinceUpdate = (Date.now() - lastUpdated.getTime()) / (1000 * 60 * 60);
+    // Return cached data if it exists (24 hour validity like iOS app)
+    if (doc.gamesJson) {
+      const lastUpdated = new Date(doc.lastUpdated);
+      const hoursSinceUpdate = (Date.now() - lastUpdated.getTime()) / (1000 * 60 * 60);
 
-    // Cache valid for 1 hour
-    if (hoursSinceUpdate < 1 && doc.gamesJson) {
-      return JSON.parse(doc.gamesJson);
+      // Log cache age for debugging
+      console.log(`[getCachedOdds] Cache age: ${hoursSinceUpdate.toFixed(1)} hours, games: ${doc.gameCount}`);
+
+      // Use cache if less than 24 hours old
+      if (hoursSinceUpdate < 24) {
+        return JSON.parse(doc.gamesJson);
+      }
     }
 
     return null;
   } catch (error) {
+    console.log("[getCachedOdds] Error:", error.message);
     return null;
   }
 };
